@@ -1,0 +1,38 @@
+{
+    "name": "WhackAFrog",
+	"version": "0.1.0",
+	"description": "WhackAFrog",
+	"author": "WhackAFrog",
+	"main": "./resources/app/main.js",
+	"scripts": {
+        "postinstall": "install-app-deps",
+        "start": "npm install && electron ./app",
+        "pack": "build --dir",
+        "dist": "build"
+    },
+    "build": {
+        "appId": "whackafrog",
+        "dmg": {
+		    "contents": [
+                {
+                    "x": 110,
+                    "y": 150
+                },
+                {
+                    "x": 240,
+                    "y": 150,
+                    "type": "link",
+                    "path": "/Applications"
+                }
+            ]
+        },
+        "win": {
+			"icon": "build/icon.ico",
+			"target": "NSIS"
+        }
+    },
+    "devDependencies": {
+        "electron-builder": "latest",
+        "electron": "1.6.11"
+    }
+}

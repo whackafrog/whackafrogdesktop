@@ -1,0 +1,7 @@
+{
+  "name"    : "WhackAFrog",
+  "description": "WhackAFrog",
+  "version" : "0.1.0",
+  "author": "WhackAFrog",
+  "main"    : "main.js"
+}

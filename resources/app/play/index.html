@@ -1,0 +1,272 @@
+<html>
+<head>
+<title>WhackAFrog</title>
+<link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+<style>
+h1 {
+  text-align: center;
+  font-family: Tahoma;
+}
+div {
+  text-align: center;
+}
+h2 {
+  text-align: center;
+  font-family: Tahoma;
+}
+</style>
+</head>
+<body>
+<div>
+  <h1>WhackAFrog</h1>
+  <div id="buttons">
+  <script>
+   new Audio("start.mp3").play();
+   window.seconds = 120;
+   window.score = 0;
+   function exit() {
+    window.location = "../index.html";
+   }
+   function timer() {
+    if (window.seconds >= 0) {
+      window.seconds -= 1;
+     } else {
+      if (window.timeout !== 1) {
+       window.timeout = 1;
+       new Audio("timeout.mp3").play();
+       document.getElementById("buttons").innerHTML = "<h2>Time out!<br>Your score is: " + window.score + "</h2><br><button onclick='exit()'>Back</button>";
+      }
+     }
+   setTimeout(timer, 1000);
+   }
+   timer();
+   function start() {
+	if (window.timeout !== 1) {
+     window.number = Math.floor((Math.random() * 9) + 1);
+     new Audio("frog.mp3").play();
+     window.setTimeout(function(){new Audio(window.number + ".mp3").play()}, 500);
+	 window.startseconds = 3;
+	}
+   }
+   function starttimer(){
+     if (window.startseconds >= 0) {
+      window.startseconds -= 1;
+     } else {
+	   window.score -= 1;
+       start();
+      }
+	  setTimeout(starttimer, 1000);
+    }
+   setTimeout(start,1000);
+   setTimeout(starttimer,1001);
+   function one() {
+	if (window.timeout !== 1) {
+     if (window.number == 1) {
+      window.score += 2;
+      new Audio("correct.mp3").play();
+      window.setTimeout(start, 1000);
+     } else {
+      window.score -= 1;
+      new Audio("wrong.mp3").play();
+      window.setTimeout(start, 1000);
+	 }
+    }
+   }
+
+   function two() {
+	if (window.timeout !== 1) {
+     if (window.number == 2) {
+      window.score += 2;
+      new Audio("correct.mp3").play();
+      window.setTimeout(start, 1000);
+     } else {
+      window.score -= 1;
+      new Audio("wrong.mp3").play();
+      window.setTimeout(start, 1000);
+	 }
+    }
+   }
+
+   function three() {
+	if (window.timeout !== 1) {
+     if (window.number == 3) {
+      window.score += 2;
+      new Audio("correct.mp3").play();
+      window.setTimeout(start, 1000);
+     } else {
+      window.score -= 1;
+      new Audio("wrong.mp3").play();
+      window.setTimeout(start, 1000);
+	 }
+    }
+   }
+
+   function four() {
+	if (window.timeout !== 1) {
+     if (window.number == 4) {
+      window.score += 2;
+      new Audio("correct.mp3").play();
+      window.setTimeout(start, 1000);
+     } else {
+      window.score -= 1;
+      new Audio("wrong.mp3").play();
+      window.setTimeout(start, 1000);
+	 }
+    }
+   }
+
+   function five() {
+	if (window.timeout !== 1) {
+     if (window.number == 5) {
+      window.score += 2;
+      new Audio("correct.mp3").play();
+      window.setTimeout(start, 1000);
+     } else {
+      window.score -= 1;
+      new Audio("wrong.mp3").play();
+      window.setTimeout(start, 1000);
+	 }
+    }
+   }
+
+   function six() {
+	if (window.timeout !== 1) {
+     if (window.number == 6) {
+      window.score += 2;
+      new Audio("correct.mp3").play();
+      window.setTimeout(start, 1000);
+     } else {
+      window.score -= 1;
+      new Audio("wrong.mp3").play();
+      window.setTimeout(start, 1000);
+	 }
+    }
+   }
+
+   function seven() {
+	if (window.timeout !== 1) {
+     if (window.number == 7) {
+      window.score += 2;
+      new Audio("correct.mp3").play();
+      window.setTimeout(start, 1000);
+     } else {
+      window.score -= 1;
+      new Audio("wrong.mp3").play();
+      window.setTimeout(start, 1000);
+	 }
+    }
+   }
+
+   function eight() {
+	if (window.timeout !== 1) {
+     if (window.number == 8) {
+      window.score += 2;
+      new Audio("correct.mp3").play();
+      window.setTimeout(start, 1000);
+     } else {
+      window.score -= 1;
+      new Audio("wrong.mp3").play();
+      window.setTimeout(start, 1000);
+	 }
+    }
+   }
+
+   function nine() {
+	if (window.timeout !== 1) {
+     if (window.number == 9) {
+      window.score += 2;
+      new Audio("correct.mp3").play();
+      window.setTimeout(start, 1000);
+     } else {
+      window.score -= 1;
+      new Audio("wrong.mp3").play();
+      window.setTimeout(start, 1000);
+	 }
+    }
+   }
+
+    document.onkeydown = function(e) {
+     e = e || window.event;
+     var key = e.which || e.keyCode;
+     if (key === 49) {
+      one();
+     }
+     if (key === 50) {
+      two();
+     }
+     if (key === 51) {
+      three();
+     }
+     if (key === 52) {
+      four();
+     }
+     if (key === 53) {
+      five();
+     }
+     if (key === 54) {
+      six();
+     }
+     if (key === 55) {
+      seven();
+     }
+     if (key === 56) {
+      eight();
+     }
+     if (key === 57) {
+      nine();
+     }
+     if (key === 97) {
+      one();
+     }
+     if (key === 98) {
+      two();
+     }
+     if (key === 99) {
+      three();
+     }
+     if (key === 100) {
+      four();
+     }
+     if (key === 101) {
+      five();
+     }
+     if (key === 102) {
+      six();
+     }
+     if (key === 103) {
+      seven();
+     }
+     if (key === 104) {
+      eight();
+     }
+     if (key === 105) {
+      nine();
+     }
+	 if (key === 27) {
+	  exit();
+	 }
+	}
+	  
+	
+	function fly() {
+     window.flynumber = Math.floor((Math.random() * 4) + 1);
+	 if (flynumber === 3) {
+      new Audio("fly.mp3").play();
+	 }
+	 setTimeout(fly, 2500);
+	}
+	setTimeout(fly, 2500);
+  </script>
+   <button onclick="one()">1</button>
+   <button onclick="two()">2</button>
+   <button onclick="three()">3</button>
+   <button onclick="four()">4</button>
+   <button onclick="five()">5</button>
+   <button onclick="six()">6</button>
+   <button onclick="seven()">7</button>
+   <button onclick="eight()">8</button>
+   <button onclick="nine()">9</button>
+  </div>
+</div>
+</body>
+</html>
